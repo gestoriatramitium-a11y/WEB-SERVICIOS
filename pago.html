@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasos de Pago - Gestoría Tramitium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Mantener estilos base */
+        :root {
+            --primary-color: #2c3e50; /* Azul oscuro */
+            --secondary-color: #3498db; /* Azul claro */
+            --accent-color: #e67e22; /* Naranja (Pago) */
+            --success-color: #27ae60; /* Verde */
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.5em;
+        }
+        
+        .payment-box {
+            background-color: var(--white);
+            padding: 40px;
+            margin-top: 50px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .payment-box h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 2em;
+        }
+        
+        .payment-box h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 30px;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 10px;
+        }
+
+        .payment-box p {
+            font-size: 1.1em;
+            color: var(--text-color);
+        }
+        
+        .payment-box i.main-icon {
+            color: var(--accent-color);
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .methods {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .method-card {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            flex: 1 1 45%;
+            min-width: 250px;
+            text-align: left;
+        }
+        
+        .method-card h4 {
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .method-card h4 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .refund-notice {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid var(--success-color);
+            background-color: rgba(39, 174, 96, 0.05);
+            color: var(--success-color);
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 500;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #2980b9;
+        }
+        
+        @media (max-width: 600px) {
+            .payment-box {
+                padding: 30px 20px;
+                margin-top: 30px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            .methods {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Gestoría Tramitium</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="payment-box">
+            <i class="fas fa-hand-holding-usd main-icon"></i>
+            <h2>¡Solicitud Recibida! Siga el Siguiente Paso para el Pago</h2>
+            <p>Hemos recibido la información de su solicitud. Para poder iniciar la gestión de su trámite **de forma inmediata**, el siguiente paso es realizar el pago.</p>
+            
+            <p style="font-weight: 600; color: var(--accent-color);">
+                El precio con IVA de su servicio es el indicado en la sección de la web de donde envió la solicitud y en el correo de confirmación que acaba de recibir.
+            </p>
+
+            <h3>Métodos de Pago Disponibles</h3>
+            
+            <div class="methods">
+                
+                <div class="method-card">
+                    <h4><i class="fas fa-mobile-alt"></i> Bizum (Recomendado)</h4>
+                    <p>El pago es instantáneo y nos permite comenzar a tramitar su expediente en el menor tiempo posible.</p>
+                    <p><strong>Número de teléfono:</strong> <span style="color: var(--primary-color); font-size: 1.2em;">+34 628 30 94 69</span></p>
+                    <p style="font-size: 0.9em; margin-top: 5px;">*Asegúrese de indicar su nombre y el servicio solicitado en el concepto.</p>
+                </div>
+                
+                <div class="method-card">
+                    <h4><i class="fas fa-university"></i> Transferencia Bancaria</h4>
+                    <p>Si prefiere pagar por transferencia, le facilitamos nuestros datos bancarios a continuación.</p>
+                    <p><strong>Beneficiario:</strong> Gestoría Tramitium S.L.</p>
+                    <p><strong>IBAN:</strong> <span style="color: var(--primary-color); font-size: 1.2em;">ES00 0000 0000 0000 0000 0000</span></p>
+                    <p style="font-size: 0.9em; margin-top: 5px;">*El inicio del trámite dependerá de la recepción del pago (1-2 días hábiles).</p>
+                </div>
+
+            </div>
+
+            <p style="margin-top: 30px;">Una vez confirmado el pago, nuestro equipo de gestores se pondrá **manos a la obra de inmediato**. Recibirá un correo de confirmación de inicio de trámite.</p>
+            
+            <div class="refund-notice">
+                <p style="margin: 0; color: var(--primary-color);">
+                    <i class="fas fa-info-circle"></i> <strong>Garantía de Servicio Profesional:</strong> En el caso improbable de que **no podamos iniciar o finalizar** la gestión por motivos ajenos a nuestra voluntad, le garantizamos la **devolución íntegra del importe abonado**.
+                </p>
+            </div>
+            
+            <a href="index.html" class="back-link">Volver a la Página Principal</a>
+        </div>
+    </main>
+
+</body>
+</html>
