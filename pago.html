@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* Mantener estilos base */
+        /* Paleta de colores actualizada para coincidir con el index.html profesional */
         :root {
-            --primary-color: #2c3e50; /* Azul oscuro */
-            --secondary-color: #3498db; /* Azul claro */
-            --accent-color: #e67e22; /* Naranja (Pago) */
-            --success-color: #27ae60; /* Verde */
-            --text-color: #333;
-            --light-bg: #f8f9fa;
+            --primary-color: #1A2C3F; /* Azul Marino Profundo (Base) */
+            --secondary-color: #007bff; /* Azul Vibrante (Énfasis, CTAs) */
+            --accent-color: #f39c12; /* Amarillo Dorado/Naranja (Pago) */
+            --success-color: #27ae60; /* Verde (Para el aviso de garantía) */
+            --text-color: #495057; /* Gris Oscuro Suave */
+            --light-bg: #f8f9fa; /* Fondo Blanco Roto */
             --white: #ffffff;
         }
 
@@ -56,9 +56,9 @@
             background-color: var(--white);
             padding: 40px;
             margin-top: 50px;
-            border-radius: 8px;
+            border-radius: 12px; /* Más redondeado */
             text-align: center;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             border-top: 5px solid var(--accent-color);
         }
 
@@ -67,7 +67,7 @@
             font-weight: 700;
             color: var(--primary-color);
             margin-top: 0;
-            font-size: 2em;
+            font-size: 2.2em;
         }
         
         .payment-box h3 {
@@ -86,8 +86,8 @@
         
         .payment-box i.main-icon {
             color: var(--accent-color);
-            font-size: 4em;
-            margin-bottom: 20px;
+            font-size: 4.5em; /* Más grande */
+            margin-bottom: 25px;
         }
         
         .methods {
@@ -100,25 +100,32 @@
         
         .method-card {
             background-color: var(--light-bg);
-            padding: 20px;
+            padding: 25px; /* Más padding */
             border-radius: 8px;
             border: 1px solid #ddd;
             flex: 1 1 45%;
             min-width: 250px;
             text-align: left;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .method-card:hover {
+             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
         
         .method-card h4 {
             color: var(--primary-color);
             font-family: 'Montserrat', sans-serif;
+            font-weight: 700; /* Más peso */
             margin-top: 0;
             display: flex;
             align-items: center;
+            font-size: 1.3em;
         }
         
         .method-card h4 i {
             margin-right: 10px;
-            color: var(--accent-color);
+            color: var(--secondary-color); /* Iconos de método en azul vibrante */
         }
 
         .refund-notice {
@@ -126,26 +133,35 @@
             padding: 20px;
             border: 1px solid var(--success-color);
             background-color: rgba(39, 174, 96, 0.05);
-            color: var(--success-color);
-            border-radius: 5px;
+            color: var(--text-color); /* Color de texto más legible */
+            border-radius: 8px;
             font-size: 1em;
             font-weight: 500;
+            text-align: left;
+        }
+
+        .refund-notice strong {
+            color: var(--success-color);
         }
         
         .back-link {
+            /* ESTILO DEL BOTÓN PRINCIPAL */
             display: inline-block;
-            margin-top: 35px;
-            padding: 10px 20px;
+            margin-top: 40px;
+            padding: 15px 30px; 
             background-color: var(--secondary-color);
             color: var(--white);
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: 600;
+            font-size: 1.1em;
             transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .back-link:hover {
-            background-color: #2980b9;
+            background-color: #0056b3; /* Tono más oscuro de azul */
         }
         
         @media (max-width: 600px) {
@@ -204,12 +220,12 @@
             <p style="margin-top: 30px;">Una vez confirmado el pago, nuestro equipo de gestores se pondrá **manos a la obra de inmediato**. Recibirá un correo de confirmación de inicio de trámite.</p>
             
             <div class="refund-notice">
-                <p style="margin: 0; color: var(--primary-color);">
+                <p style="margin: 0;">
                     <i class="fas fa-info-circle"></i> <strong>Garantía de Servicio Profesional:</strong> En el caso improbable de que **no podamos iniciar o finalizar** la gestión por motivos ajenos a nuestra voluntad, le garantizamos la **devolución íntegra del importe abonado**.
                 </p>
             </div>
             
-            <a href="index.html" class="back-link">Volver a la Página Principal</a>
+            <a href="/" class="back-link">Volver a la Página Principal</a>
         </div>
     </main>
 
