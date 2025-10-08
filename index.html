@@ -8,18 +8,20 @@
     <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
         :root {
-            --primary-color: #2c3e50; /* Azul oscuro */
-            --secondary-color: #3498db; /* Azul claro */
-            --accent-color: #e67e22; /* Naranja */
-            --text-color: #333;
-            --light-bg: #f8f9fa;
+            /* Nueva Paleta de Colores: Profesionalismo y Confianza */
+            --primary-color: #1A2C3F; /* Azul Marino Profundo (Base) */
+            --secondary-color: #007bff; /* Azul Vibrante (Énfasis, CTAs) */
+            --accent-color: #f39c12; /* Amarillo Dorado/Naranja (Highlight de íconos y estrellas) */
+            --text-color: #495057; /* Gris Oscuro Suave */
+            --light-bg: #f8f9fa; /* Fondo Blanco Roto */
             --white: #ffffff;
-            --border-color: #ddd;
+            --border-color: #e9ecef; /* Borde muy sutil */
+            --shadow-color: rgba(26, 44, 63, 0.1); /* Sombra sutil con el color primario */
         }
 
         body {
@@ -43,13 +45,13 @@
             color: var(--white);
             padding: 20px 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px var(--shadow-color);
         }
 
         header h1 {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+            font-weight: 800; /* Más peso */
             font-size: 2.5em;
         }
 
@@ -59,47 +61,82 @@
         }
 
         .hero {
-            background-color: var(--secondary-color);
-            color: var(--white);
+            /* CAMBIO CLAVE: Fondo blanco, más padding y sombra sutil */
+            background-color: var(--white);
+            color: var(--text-color);
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px; 
             margin-bottom: 30px;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px var(--shadow-color);
         }
 
         .hero h2 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 2em;
+            font-weight: 700;
+            font-size: 2.8em; /* Titular más grande */
+            color: var(--primary-color);
             margin-top: 0;
+            margin-bottom: 15px;
         }
 
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.3em; /* Texto más grande */
             max-width: 800px;
             margin: 0 auto;
         }
 
+        /* Estilo para el Bloque de Credibilidad y Rating (NUEVO) */
+        .rating-bar {
+            margin-top: 30px; /* Aumento de margen superior */
+            padding: 15px 25px;
+            background-color: var(--light-bg); /* Fondo claro para destacar */
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap; /* Para responsive */
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color); /* Borde sutil */
+        }
+
+        .rating-bar .stars i {
+            color: var(--accent-color); /* Color dorado/naranja para las estrellas */
+            font-size: 1.4em;
+            margin: 0 2px;
+        }
+
+        .rating-bar p {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+        /* Fin Estilos Rating */
+
         nav ul {
+            /* Estilo de "Píldoras" o "Tabs" */
             list-style: none;
-            padding: 0;
+            padding: 10px 0;
             text-align: center;
-            background-color: var(--white);
+            background-color: transparent;
             border-bottom: 1px solid var(--border-color);
-            margin-bottom: 30px;
+            border-top: 1px solid var(--border-color);
+            margin-bottom: 40px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            border-radius: 8px;
+            box-shadow: none;
+            border-radius: 0;
             overflow: hidden;
         }
 
         nav ul li {
-            margin: 0;
-            flex: 1 1 auto;
-            min-width: 150px; /* Asegura que no se achiquen demasiado */
-            border-right: 1px solid var(--border-color);
+            margin: 0 5px; /* Espaciado entre píldoras */
+            flex: 0 1 auto; /* Ajuste más flexible */
+            min-width: 130px;
+            border-right: none;
         }
 
         nav ul li:last-child {
@@ -108,41 +145,44 @@
 
         nav ul li a {
             display: block;
-            padding: 15px 20px;
+            padding: 10px 20px;
             text-decoration: none;
             color: var(--primary-color);
             font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            border: 1px solid var(--border-color);
+            border-radius: 50px; /* Borde redondeado para estilo píldora */
         }
 
         nav ul li a:hover, nav ul li a.active {
             background-color: var(--secondary-color);
             color: var(--white);
+            border-color: var(--secondary-color);
         }
 
         section {
             background-color: var(--white);
-            padding: 30px;
+            padding: 40px; /* Más padding interno */
             margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            border-radius: 12px; /* Más redondeado */
+            box-shadow: 0 5px 15px var(--shadow-color); /* Sombra profesional */
         }
 
         section h2 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 2em;
+            font-size: 2.4em;
             color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color);
+            border-bottom: 4px solid var(--secondary-color); /* Línea de acento más definida */
             padding-bottom: 10px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
         }
 
         section h2 i {
             margin-right: 15px;
-            color: var(--secondary-color);
+            color: var(--accent-color); /* Ícono en color dorado/naranja */
         }
 
         h3 {
@@ -156,7 +196,7 @@
 
         .price {
             font-weight: 700;
-            color: var(--accent-color);
+            color: var(--secondary-color); /* Precio en color de énfasis */
             font-size: 1.3em;
             margin-bottom: 15px;
             display: block;
@@ -164,9 +204,10 @@
 
         details {
             border: 1px solid var(--border-color);
-            border-radius: 5px;
-            margin-top: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border-radius: 8px; /* Redondeado sutil */
+            margin-top: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            overflow: hidden;
         }
 
         summary {
@@ -175,7 +216,7 @@
             padding: 15px 20px;
             background-color: var(--light-bg);
             border-bottom: 1px solid var(--border-color);
-            color: var(--secondary-color);
+            color: var(--primary-color);
             transition: background-color 0.2s ease;
             outline: none;
             display: flex;
@@ -188,24 +229,24 @@
         }
 
         summary strong::before {
-            content: "\f0da"; /* Icono de flecha derecha */
+            content: "\f054"; /* Icono de ángulo derecho FA (más sutil) */
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
-            margin-right: 10px;
+            margin-right: 15px;
+            color: var(--secondary-color);
             transition: transform 0.2s ease;
         }
 
         details[open] > summary strong::before {
             transform: rotate(90deg);
         }
-
-        details > summary:hover {
-            background-color: #e9ecef;
+        
+        details[open] > summary {
+            background-color: var(--border-color);
         }
 
-        details > summary:focus {
-            outline: 2px solid var(--secondary-color);
-            outline-offset: 2px;
+        details > summary:hover {
+            background-color: var(--border-color);
         }
 
         details > div {
@@ -218,6 +259,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
         }
 
         form label {
@@ -240,6 +282,16 @@
             border-radius: 4px;
             font-size: 1em;
             box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        form input[type="text"]:focus,
+        form input[type="email"]:focus,
+        form input[type="tel"]:focus,
+        form textarea:focus,
+        form select:focus {
+            border-color: var(--secondary-color);
+            outline: none;
         }
         
         form textarea {
@@ -248,31 +300,33 @@
         }
 
         form button {
-            background-color: var(--accent-color);
+            /* Botón principal en Azul Vibrante */
+            background-color: var(--secondary-color); 
             color: var(--white);
-            padding: 12px 25px;
+            padding: 15px 25px; /* Más grande */
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 1.1em;
             font-weight: 600;
             transition: background-color 0.3s ease;
             width: 100%;
+            text-transform: uppercase; /* MAYÚSCULAS para énfasis */
+            letter-spacing: 1px;
         }
 
         form button:hover {
-            background-color: #d86912; /* Un poco más oscuro */
+            background-color: #0056b3; /* Tono más oscuro de azul */
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 30px 20px;
+            margin-top: 50px;
             background-color: var(--primary-color);
             color: var(--white);
             font-size: 0.9em;
-            border-radius: 8px;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+            border-radius: 0;
         }
 
         footer a {
@@ -290,30 +344,26 @@
             margin: 30px 0;
         }
 
-        h4 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--secondary-color);
-            margin-top: 25px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--light-bg);
-            padding-bottom: 5px;
-        }
-
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
+            .hero {
+                padding: 40px 20px;
             }
             .hero h2 {
-                font-size: 1.7em;
+                font-size: 2.2em;
+            }
+            .rating-bar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
             }
             nav ul li {
                 min-width: 120px;
-                border-bottom: 1px solid var(--border-color);
-                border-right: none;
+                margin: 5px 3px;
             }
-            nav ul li:last-child {
-                border-bottom: none;
+            nav ul li a {
+                padding: 8px 15px;
+                font-size: 0.9em;
             }
             section {
                 padding: 20px;
@@ -321,36 +371,23 @@
             section h2 {
                 font-size: 1.8em;
             }
-            h3 {
-                font-size: 1.3em;
-            }
-            form input[type="text"],
-            form input[type="email"],
-            form input[type="tel"],
-            form input[type="date"],
-            form textarea,
-            form select {
-                width: 100%;
-            }
         }
 
         @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8em;
-            }
             .hero h2 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
             nav ul {
                 flex-direction: column;
+                border: none;
             }
             nav ul li {
                 min-width: unset;
                 width: 100%;
-                border-right: none;
+                margin: 5px 0;
             }
             nav ul li a {
-                padding: 12px 15px;
+                border-radius: 8px;
             }
             section h2 {
                 font-size: 1.5em;
@@ -368,27 +405,39 @@
     <header>
         <div class="container">
             <h1>Gestoría Tramitium</h1>
-            <p>Gestiones y Trámites Online</p>
+            <p>Tu Gestión Online Rápida y Segura</p>
         </div>
     </header>
 
     <main class="container">
         <section class="hero">
-            <h2>Bienvenido a Gestoría Tramitium</h2>
-            <p>Tu centro de soluciones para trámites registrales, mercantiles y notariales en España. Realiza tus gestiones de forma rápida, segura y sin moverte de casa. Simplemente, rellena el formulario del servicio que necesites y nos pondremos en marcha.</p>
-        </section>
+            <h2>Gestión de Trámites Online en España</h2>
+            <p>Tu centro de soluciones para trámites **registrales, mercantiles y notariales**. Realiza tus gestiones de forma rápida, segura y sin moverte de casa.</p>
+            
+            <div class="rating-bar">
+                <p>Valoración de Clientes:</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i> 
+                </div>
+                <p><strong>4.9/5.0</strong> | Más de 500 Opiniones</p>
+            </div>
+            </section>
 
         <nav>
             <ul>
-                <li><a href="#propiedad">Registro de la Propiedad</a></li>
-                <li><a href="#mercantil">Registro Mercantil</a></li>
+                <li><a href="#propiedad">Propiedad</a></li>
+                <li><a href="#mercantil">Mercantil</a></li>
                 <li><a href="#notarios">Notarios</a></li>
                 <li><a href="#hipotecas">Hipotecas</a></li>
-                <li><a href="#energia">Certificado Energético</a></li>
-                <li><a href="#marcas">Registro de Marcas</a></li>
-                <li><a href="#dgt">Trámites DGT</a></li>
-                <li><a href="#sociedades">Constitución de Sociedades</a></li>
-                <li><a href="#civil">Registro Civil</a></li>
+                <li><a href="#energia">Energético</a></li>
+                <li><a href="#marcas">Marcas</a></li>
+                <li><a href="#dgt">DGT</a></li>
+                <li><a href="#sociedades">Sociedades</a></li>
+                <li><a href="#civil">Civil</a></li>
             </ul>
         </nav>
 
